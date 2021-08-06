@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.action.uygulamasi">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".GirisEkrani"
+            android:theme="@style/TamEkran">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".KayitEkrani"
+            android:parentActivityName=".GirisEkrani"
+            android:theme="@style/TamEkran">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GirisEkrani" />
+        </activity>
+        <activity
+            android:name=".Twitter"
+            android:label="@string/title_activity_twitter"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfilActivity"
+            android:label="Profil"
+            android:parentActivityName=".Twitter">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Twitter" />
+        </activity>
+        <activity
+            android:name=".TweetGonder"
+            android:label="Tweetle"
+            android:parentActivityName=".Twitter">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Twitter" />
+        </activity>
+        <activity
+            android:name=".AramaActivity"
+            android:label="Ara"
+            android:theme="@style/AppTheme.Base" />
+        <activity
+            android:name=".KisiTweetleriActivity"
+            android:parentActivityName=".AramaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AramaActivity" />
+        </activity>
+    </application>
+
+</manifest>
